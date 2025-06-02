@@ -1,0 +1,184 @@
+.single-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animation-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .heartbreak-animation {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 64px;
+    animation: heartbreak 2s infinite;
+  }
+  
+  @keyframes heartbreak {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2) rotate(15deg); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+  
+  .floating-emojis {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floating-emoji {
+    position: absolute;
+    font-size: 24px;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.6;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+  }
+  
+  .content-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .single-title {
+    color: #ff4b6e;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .membership-badge {
+    position: absolute;
+    top: -10px;
+    right: -60px;
+    background: #ffd700;
+    color: #333;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transform: rotate(15deg);
+    animation: shine 2s infinite;
+  }
+  
+  @keyframes shine {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+  
+  .message-box {
+    margin: 2rem 0;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .single-message {
+    font-size: 1.5rem;
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn.new-quote {
+    background: #ff4b6e;
+    color: white;
+  }
+  
+  .btn.try-again {
+    background: white;
+    color: #ff4b6e;
+    border: 2px solid #ff4b6e;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fun-fact {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #ff4b6e;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+  }
+  
+  @media (max-width: 768px) {
+    .single-title {
+      font-size: 2rem;
+    }
+    
+    .single-message {
+      font-size: 1.2rem;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+    
+    .membership-badge {
+      position: static;
+      display: block;
+      margin: 10px auto;
+      transform: none;
+    }
+  }
